@@ -5,8 +5,7 @@ import ConnectButton from "@/components/ConnectButton";
 
 
 export default function Home() {
-  const account = useAccount();
-  
+  const { address, isConnecting, isDisconnected } = useAccount()
   
   return (
   
@@ -16,9 +15,9 @@ export default function Home() {
     </div>
     <div >
         {
-          account?.address ?
-          <div>Connected Address：{account.address}</div>:
-          <div className='text-red-600'>Not connected yet, please click the button above to connect your wallet.</div>
+          (isConnecting || isDisconnected) ?
+          <div className='text-red-600'>Not connected yet, please click the ConnectButton first</div>:
+          <div>Connected Wallet Address：{address}</div>
         }
       </div>
     </main>

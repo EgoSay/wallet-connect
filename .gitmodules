@@ -1,3 +1,0 @@
-[submodule "wallet-connect"]
-	path = wallet-connect
-	url = git@github.com:EgoSay/wallet-connect.git
